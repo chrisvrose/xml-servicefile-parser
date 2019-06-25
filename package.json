@@ -4,7 +4,8 @@
   "description": "Noob script to create scripts onn servicefile.xml",
   "main": "index.js",
   "scripts": {
-    "test": "node ."
+    "test": "node .",
+    "package":"pkg  index.js --out-path build/"
   },
   "repository": {
     "type": "git",
