@@ -1,19 +1,20 @@
 
 const {parseString} = require('xml2js')
+const path = require('path')
 const fs = require('fs')
 
-const settings = JSON.parse(fs.readFileSync("settings.json"))
+const settings = JSON.parse(fs.readFileSync( path.join(__dirname,"settings.json") ))
 console.log("Loaded configuration")
 //console.log(settings)
 //console.log(process.argv)
 fs.readFile(settings.fileName,(err,data)=>{
     if(err){
-        throw new Error(err.code,": Could not read file. Try again.:",err.name)
+        throw new Error(`${err.code}: Could not read file. Try again. ${err.name}`)
     }
     console.log(`Reading ${settings.fileName}`)
     parseString(data,(err,res)=>{
         if(err){
-            throw new Error(err.code,": Error parsing file.:",err.name)
+            throw new Error(`${err.code}: Error parsing file. :${err.name}`)
         }
 
         console.log(`Parsing ${settings.fileName}`)
