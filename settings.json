@@ -1,0 +1,23 @@
+{
+    "defaultMode": "0",
+    "scriptConfig":{
+        "general":{
+            "command":"fastboot"
+        },
+        "env":[ 
+        {
+            "name":"sh",
+            "preconfig":"#!/bin/bash",
+            "extension":".sh",
+            "commentPre":"#"
+        },
+        {
+            "name":"batch",
+            "preconfig":"@echo off",
+            "extension":".bat",
+            "commentPre":"::"
+        }]
+    },
+    "fileName":"servicefile.xml",
+    "serviceScript": "serviceScript"
+}
