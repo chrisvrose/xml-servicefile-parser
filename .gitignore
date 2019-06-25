@@ -1,5 +1,6 @@
 # Builds
 index-*
+index.exe
 # Service Files
 servicefile.xml
 # Logs
