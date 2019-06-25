@@ -26,8 +26,8 @@ fs.readFile(settings.fileName,(err,data)=>{
         if(steps.$.interface!=="AP") {
             throw new Error("Does not look like servicefile.xml. Aborting.")
         }
-        let sScript = settings.scriptConfig.env[settings.defaultMode].preconfig + '\n'
-        sScript+= `${settings.scriptConfig.env[settings.defaultMode].commentPre} Generated for ${res.flashing.header[0].phone_model[0].$.model} \n`
+        let sScript = ''//settings.scriptConfig.env[settings.defaultMode].preconfig + '\n'
+        //sScript+= `${settings.scriptConfig.env[settings.defaultMode].commentPre} Generated for ${res.flashing.header[0].phone_model[0].$.model} \n`
         steps.step.forEach(e=>{
             switch(e.$.operation){
                 case "oem":
@@ -44,11 +44,14 @@ fs.readFile(settings.fileName,(err,data)=>{
                     throw new Error(`Unkown: ${e.$.operation}`)
             }
         })
-        fs.writeFile(settings.serviceScript+settings.scriptConfig.env[settings.defaultMode].extension,sScript,{mode:0o765},(err)=>{
-            if(err){
-                throw new Error(`${err.errno}: Error Writing Script: ${err.name}`)
-            }
-            console.log("Done")
+        settings.scriptConfig.env.forEach(e=>{
+            const data = e.preConfig+'\n'+ e.commentPre + ` Generated for ${res.flashing.header[0].phone_model[0].$.model}` +'\n'+sScript
+            fs.writeFile(settings.serviceScript+e.extension,data,{mode:0o765},(err)=>{
+                if(err){
+                    throw new Error(`${err.errno}: Error Writing Script: ${err.name}`)
+                }
+                console.log(`Done: ${settings.serviceScript+e.extension}`)
+            })
         })
         //console.log(sScript)
     })
