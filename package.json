@@ -1,11 +1,18 @@
 {
   "name": "xml-servicefile-parser",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Noob script to create scripts onn servicefile.xml",
-  "main": "index.js",
+  "bin": {
+    "main": "index.js"
+  },
   "scripts": {
     "test": "node .",
-    "package":"pkg  index.js --out-path build/"
+    "pkg": "pkg . --out-path build/"
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 4,
+    "singleQuote": true
   },
   "repository": {
     "type": "git",
@@ -20,8 +27,11 @@
   "dependencies": {
     "xml2js": "^0.4.19"
   },
-  "pkg":{
+  "pkg": {
     "scripts": "index.js",
     "assets": "settings.json"
+  },
+  "devDependencies": {
+    "pkg": "^5.1.0"
   }
 }
