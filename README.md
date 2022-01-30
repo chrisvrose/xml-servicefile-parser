@@ -1,8 +1,14 @@
 # xml-servicefile-parser
 
-Parse `servicefile.xml` from stock Android pieces to create a script to restore to stock.
+Parse `servicefile.xml`/`flashfile.xml` from stock Android pieces to create a script to restore to stock.
 
 > Remember to *inspect* the created scripts before actually running them.
+
+
+## NPM
+
+### Usage
+
 
 
 ## Executable
@@ -15,7 +21,13 @@ Parse `servicefile.xml` from stock Android pieces to create a script to restore 
 
 ### Usage
 
+#### Option 1
+
 1. Place alongside `servicefile.xml`.
-2. Run executable.
+2. Run executable. On Windows, double click. On Linux, do `chmod +x <filename>` then `./<filename>`
 > Be aware that the default executable creates `serviceScript.sh` and `serviceScript.bat`, so don't have any files of that name already. 
 3. Inspect the scripts and use them as required.
+
+#### Option 2
+
+1. Run it passing the filename as the second argument

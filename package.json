@@ -1,12 +1,11 @@
 {
   "name": "xml-servicefile-parser",
-  "version": "1.1.0",
-  "description": "Noob script to create scripts onn servicefile.xml",
+  "version": "1.1.1",
+  "description": "Create scripts on servicefile.xml for flashing images on Android Phones",
   "bin": {
     "main": "index.js"
   },
   "scripts": {
-    "test": "node .",
     "pkg": "pkg . --out-path build/"
   },
   "prettier": {
@@ -18,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/chrisvrose/xml-servicefile-parser.git"
   },
-  "author": "Christopher Rose",
+  "author": "Atreya Bain",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/chrisvrose/xml-servicefile-parser/issues"
