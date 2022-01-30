@@ -31,6 +31,6 @@
     "assets": "settings.json"
   },
   "devDependencies": {
-    "pkg": "^5.1.0"
+    "pkg": "^5.5.2"
   }
 }
